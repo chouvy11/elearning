@@ -1,0 +1,172 @@
+.myNavBar {
+    box-shadow: 0 0 1px 1px rgb(20 23 28 / 10%), 0 3px 1px 0 rgb(20 23 28 / 10%);
+    padding: $pd-0 - 2 $pd-1 + 1;
+    .myNavBar__left {
+        display: flex;
+        align-items: center;
+        .navbar-brand {
+            flex-grow: 1;
+            margin-right: 0;
+            text-align: center;
+            img {
+                width: 110px;
+            }
+            .logo-black {
+                display: inline-block;
+            }
+            .logo-white {
+                display: none;
+            }
+        }
+        .myNavBar__categories {
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+            @include styleText($color-black-light, $fs-1, $fw-0);
+            i {
+                color: $color-gray-3;
+            }
+        }
+        .myNavBar__form-search {
+            flex-grow: 8;
+            @include styleForm($color-white-cream, $color-white-0, $color-gray-4,$color-black-light);
+        }
+    }
+    .myNavBar__right {
+        .navbar-nav {
+            justify-content: space-between;
+            align-items: center;
+            .nav-item {
+                position: relative;
+                &:hover {
+                    background-color: $color-gray-1;
+                }
+                &:hover .overlay {
+                    display: block;
+                }
+                padding: $pd-2 + 2 $pd-2;
+                border-radius: $border-radius + 1;
+                .nav-link {
+                    flex-grow: 1;
+                    text-align: center;
+                    cursor: pointer;
+                    @include styleText($color-black-light, $fs-1, $fw-0);
+                }
+                .overlay {
+                    display: none;
+                    background-color: $color-white-0;
+                    width: 330px;
+                    padding: $pd-3;
+                    position: absolute;
+                    top: 60px;
+                    right: 0;
+                    text-align: center;
+                    border-top: 1px solid $color-gray-1;
+                    box-shadow: 0 4px 16px $color-gray-5;
+                    z-index: 1;
+                    &::before {
+                        content: "";
+                        width: 15px;
+                        height: 15px;
+                        background-color: $color-white-0;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: -9px;
+                        right: 10%;
+                        border-top: 1px solid $color-gray-1;
+                        border-left: 1px solid $color-gray-1;
+                    }
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+            .myNavBar__cart {
+                width: 50px;
+                height: 50px;
+                line-height: 20px;
+                border-radius: 50%;
+                .nav-link {
+                    font-size: 20px;
+                }
+            }
+            .myNavBar__buttons {
+                display: flex;
+                &:hover {
+                    background-color: transparent;
+                }
+                .button--white {
+                    margin-right: $mg-0;
+                    white-space: nowrap;
+                }
+                .button--red {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    @include responsive("extra-large") {
+        .business, .introduction {
+             display: none;
+        }
+        .myNavBar__right {
+            .navbar-nav {
+                justify-content: space-around;
+            }
+        }
+    }
+    @include responsive("large") {
+        .myNavBar__right {
+            .navbar-nav {
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+        }
+    }
+    @include responsive("medium") {
+        .myNavBar {
+            .navbar-toggler {
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .myNavBar__left {
+            .myNavBar__categories, .myNavBar__form-search {
+                display: none;
+            }
+        }
+        .myNavBar__right {
+             width: 50%;
+             margin-left: auto;
+            .navbar-nav {
+                text-align: center;
+                .myNavBar__buttons {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media screen and(min-width:1200px) and (max-width:1327px) {
+        .myNavBar__right {
+            .navbar-nav {
+                .nav-item {
+                    white-space: nowrap;
+                    text-align: center;
+                    .nav-link {
+                        font-size: $fs-1 - 1;
+                        
+                    }
+                    .overlay{
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+        .myNavBar--reset {
+            padding-left: 0;
+        }
+    }
+}

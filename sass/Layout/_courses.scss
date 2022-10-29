@@ -1,0 +1,57 @@
+.courses {
+    margin: $mg-1 0;
+    .courses__content {
+        width: 90%;
+        margin: auto;
+        .row {
+            margin-left: 0;
+            .courses__left {
+                display: flex;
+                align-items: center;
+                background-color: $color-gray-1;
+                padding: 0 2rem;
+                h2 {
+                    @include styleText($color-black-0, $fs-3 + 1, $fw-0);
+                }
+            }
+            .courses__right {
+                #myTab {
+                    margin-bottom: $mg-1;
+                    .nav-item {
+                        .nav-link {
+                            @include styleText($color-black-0, $fs-0, $fw-0);
+                            &:hover {
+                                border: 1px solid transparent;
+                                @include styleText($color-blue-0, $fs-0, $fw-0);
+                            }
+                            &.active {
+                                border: none;
+                                border-bottom: 5px solid $color-blue-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width:1350px) {
+        .courses__content {
+            .courses__right {
+                .item {
+                    .card-title {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+    @include responsive("medium") {
+        .courses__content {
+            .row {
+                .courses__left {
+                    padding: $pd-3;
+                }
+            }
+        }
+    }
+}

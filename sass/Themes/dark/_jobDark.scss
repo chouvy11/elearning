@@ -1,0 +1,19 @@
+.darkMode {
+    .job {
+        background-color: $color-dark-6;
+        .job__content {
+            .row {
+                .job__item {
+                    h2 {
+                        color: $color-dark-5;
+                    }
+                    .button--red {
+                        &:hover {
+                            @include hoverButton($color-white-0, $color-red-2, $color-red-2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

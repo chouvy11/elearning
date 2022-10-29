@@ -1,0 +1,43 @@
+// 1. Helper
+@import "./Helper/variables";
+@import "./Helper/mixin";
+@import "./Helper/extend";
+
+// 2. Vendors
+
+// 3. Base
+@import "./Base/reset";
+@import "./Base/customize";
+
+// 4. Layout
+@import "./Layout/header";
+@import "./Layout/footer";
+@import "./Layout/intro";
+@import "./Layout/courses";
+@import "./Layout/viewing";
+@import "./Layout/banner";
+@import "./Layout/categories";
+@import "./Layout/students";
+@import "./Layout/partners";
+@import "./Layout/job";
+@import "./Layout/sidebar";
+
+// 5. Components
+@import "./Components/button";
+@import "./Components/cover";
+@import "./Components/card";
+
+// 6. Pages
+@import "./Pages/home";
+
+// 7. Themes
+@import "./Themes/dark/resetDark";
+@import "./Themes/dark/sidebardark";
+@import "./Themes/dark/headerDark";
+@import "./Themes/dark/couresDark";
+@import "./Themes/dark/cardDark";
+@import "./Themes/dark/categories";
+@import "./Themes/dark/studentDark";
+@import "./Themes/dark/partnersDark";
+@import "./Themes/dark/jobDark";
+@import "./Themes/dark/footerDark";
